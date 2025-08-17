@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Pro | Task Manager</title>
+    <link rel="stylesheet" href="task3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-tasks"></i>
+                <h1>Productivity Pro</h1>
+            </div>
+            <div class="date-display" id="date-display"></div>
+        </header>
+
+        <div class="app-container">
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <h3>Lists</h3>
+                    <button id="new-list-btn" class="icon-btn">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <ul class="list-menu" id="list-menu">
+                    <li class="active" data-list-id="default">All Tasks</li>
+                    <li data-list-id="today">Today</li>
+                    <li data-list-id="important">Important</li>
+                </ul>
+                <div class="custom-lists" id="custom-lists"></div>
+            </div>
+
+            <div class="main-content">
+                <div class="task-input-container">
+                    <input type="text" id="task-input" placeholder="Add a new task...">
+                    <button id="add-task-btn" class="primary-btn">
+                        <i class="fas fa-plus"></i> Add
+                    </button>
+                </div>
+
+                <div class="task-filters">
+                    <div class="filter active" data-filter="all">All</div>
+                    <div class="filter" data-filter="active">Active</div>
+                    <div class="filter" data-filter="completed">Completed</div>
+                </div>
+
+                <div class="task-list" id="task-list"></div>
+
+                <div class="task-stats">
+                    <span id="task-count">0 tasks</span>
+                    <button id="clear-completed" class="text-btn">Clear completed</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="list-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h3>Create New List</h3>
+                <input type="text" id="new-list-name" placeholder="List name">
+                <div class="color-picker">
+                    <div class="color-option" data-color="#ff6b6b"></div>
+                    <div class="color-option" data-color="#48dbfb"></div>
+                    <div class="color-option" data-color="#1dd1a1"></div>
+                    <div class="color-option" data-color="#feca57"></div>
+                    <div class="color-option" data-color="#5f27cd"></div>
+                    <div class="color-option" data-color="#ff9ff3"></div>
+                </div>
+                <button id="save-list-btn" class="primary-btn">Save List</button>
+            </div>
+        </div>
+
+        <div class="modal" id="task-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h3 id="task-modal-title">Edit Task</h3>
+                <input type="text" id="edit-task-input">
+                <div class="task-options">
+                    <div class="option-group">
+                        <label>Due Date</label>
+                        <input type="date" id="task-date">
+                    </div>
+                    <div class="option-group">
+                        <label>Time</label>
+                        <input type="time" id="task-time">
+                    </div>
+                    <div class="option-group">
+                        <label>Priority</label>
+                        <select id="task-priority">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button id="save-task-btn" class="primary-btn">Save</button>
+                    <button id="delete-task-btn" class="danger-btn">Delete</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="task3.js"></script>
+    </div>
+</body>
+</html>
